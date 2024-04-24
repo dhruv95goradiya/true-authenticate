@@ -1,0 +1,742 @@
+{
+	"info": {
+		"_postman_id": "f8f072ba-f3b4-4fb2-ab95-451578c08b35",
+		"name": "true-authenticate",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "33925630"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"fswefw ewr\",\n    \"phoneNumber\": \"2524136541\",\n    \"email\": \"stwarewrc@example.com\",\n    \"password\": \"test@1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/register"
+			},
+			"response": [
+				{
+					"name": "Already-exists",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"John cena\",\n    \"phoneNumber\": \"1234567890\",\n    \"email\": \"john@example.com\",\n    \"password\": \"cooldown123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/register"
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "99"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"63-dI78kJNe7151M2JfJWIpQjly0N4\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 23 Apr 2024 09:07:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"error\": \"Already Exists!\",\n    \"message\": \"Phone number already registered\",\n    \"data\": null\n}"
+				},
+				{
+					"name": "Register-success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"John cena\",\n    \"phoneNumber\": \"2234567890\",\n    \"email\": \"john@example.com\",\n    \"password\": \"cooldown123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/register"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "296"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"128-jUE5kK2zucRJIiEF6Q4X5Lbrcmk\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 23 Apr 2024 09:08:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 2,\n        \"name\": \"John cena\",\n        \"phoneNumber\": \"2234567890\",\n        \"email\": \"john@example.com\",\n        \"password\": \"$2b$10$BTi8sQ36cCYsrQqAEjMQn.ouJZJg8UiUWxkTjkTc8ex6M3gbhCapS\",\n        \"updatedAt\": \"2024-04-23T09:08:58.114Z\",\n        \"createdAt\": \"2024-04-23T09:08:58.114Z\"\n    },\n    \"error\": null,\n    \"message\": \"User created!\"\n}"
+				},
+				{
+					"name": "Register-ex",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Johny cool\",\n    \"phoneNumber\": \"3234567890\",\n    \"email\": \"john@example.com\",\n    \"password\": \"cooldown123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/register"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "297"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"129-VwvRmjDy3+Ob4AK+KfJ+jYo0Oek\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 23 Apr 2024 09:55:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 3,\n        \"name\": \"Johny cool\",\n        \"phoneNumber\": \"3234567890\",\n        \"email\": \"john@example.com\",\n        \"password\": \"$2b$10$O7IHOgXfAw3wqQmKkhCP9OgSHCLHSB82LnYdtQTXGtTV2ES2on6q6\",\n        \"updatedAt\": \"2024-04-23T09:55:37.575Z\",\n        \"createdAt\": \"2024-04-23T09:55:37.575Z\"\n    },\n    \"error\": null,\n    \"message\": \"User created!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"phoneNumber\": \"2524136541\",\n  \"password\": \"test@1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/login"
+			},
+			"response": [
+				{
+					"name": "login-ex",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"phoneNumber\": \"2524136541\",\n  \"password\": \"test@1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/login"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "477"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1dd-21SdQyT3dQOywMqhAa/NXWXTQcI\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 24 Apr 2024 08:33:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"user\": {\n            \"id\": 24,\n            \"name\": \"fswefw ewr\",\n            \"phoneNumber\": \"2524136541\",\n            \"email\": \"stwarewrc@example.com\",\n            \"password\": \"$2a$10$pChAzVxMehuv2r2BRk90..UkOFa8kFUjBnWIBFztZVlAfiqQ027sq\",\n            \"createdAt\": \"2024-04-24T08:31:21.000Z\",\n            \"updatedAt\": \"2024-04-24T08:31:21.000Z\"\n        },\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI0LCJpYXQiOjE3MTM5NDc2MzEsImV4cCI6MTcxMzk1MTIzMX0.JofUAQa7Inydz2h0dzWy-MIeDSI4A6mTidIo9AnHDqo\"\n    },\n    \"error\": null,\n    \"message\": \"Logged in successfully!\"\n}"
+				},
+				{
+					"name": "login-fail",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"phoneNumber\": \"2524136542\",\n  \"password\": \"test@1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/login"
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "79"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4f-qYUiLMBdniXT23oR1l9fvatz7xU\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 24 Apr 2024 11:16:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"error\": \"Invalid\",\n    \"message\": \"Invalid credentials\",\n    \"data\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "search-by-name",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI0LCJpYXQiOjE3MTM5NTYzMjcsImV4cCI6MTcxMzk1OTkyN30.2LAnWKzM5RP-YkNvZ-27oMh-uTY1L0Y8rw4lMwQVU-0",
+						"type": "text"
+					}
+				],
+				"url": "http://localhost:3000/api/search/by-name/john"
+			},
+			"response": [
+				{
+					"name": "search-by-name",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI0LCJpYXQiOjE3MTM5NTYzMjcsImV4cCI6MTcxMzk1OTkyN30.2LAnWKzM5RP-YkNvZ-27oMh-uTY1L0Y8rw4lMwQVU-0",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:3000/api/search/by-name/john"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "357"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"165-AkVQLf5QVNUH8fNSGUCjJVDfybY\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 24 Apr 2024 11:05:01 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"name\": \"John cena\",\n            \"phoneNumber\": \"2234567890\",\n            \"email\": \"john@example.com\",\n            \"spamLikelihood\": 0\n        },\n        {\n            \"name\": \"Johny cool\",\n            \"phoneNumber\": \"3234567890\",\n            \"email\": \"john@example.com\",\n            \"spamLikelihood\": 0\n        },\n        {\n            \"name\": \"Johny col\",\n            \"phoneNumber\": \"4234567890\",\n            \"email\": \"johnc@example.com\",\n            \"spamLikelihood\": 0\n        }\n    ],\n    \"message\": \"search result fetched!\",\n    \"error\": null\n}"
+				},
+				{
+					"name": "search-by-name-no-user",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI0LCJpYXQiOjE3MTM5NTYzMjcsImV4cCI6MTcxMzk1OTkyN30.2LAnWKzM5RP-YkNvZ-27oMh-uTY1L0Y8rw4lMwQVU-0",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:3000/api/search/by-name/johnk"
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "71"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"47-/SQ3Egx3sGlrOHNHZRJm9KCberE\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 24 Apr 2024 11:13:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"message\": \"No users found with this name\",\n    \"data\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "search-by-number",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI0LCJpYXQiOjE3MTM5NTYzMjcsImV4cCI6MTcxMzk1OTkyN30.2LAnWKzM5RP-YkNvZ-27oMh-uTY1L0Y8rw4lMwQVU-0",
+						"type": "text"
+					}
+				],
+				"url": "http://localhost:3000/api/search/by-number/2524136541"
+			},
+			"response": [
+				{
+					"name": "search-by-number",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI0LCJpYXQiOjE3MTM5NTYzMjcsImV4cCI6MTcxMzk1OTkyN30.2LAnWKzM5RP-YkNvZ-27oMh-uTY1L0Y8rw4lMwQVU-0",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:3000/api/search/by-number/2524136541"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "173"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ad-Ozh4Zmx+haY0zx1s+lcqds41MiU\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 24 Apr 2024 11:08:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"name\": \"fswefw ewr\",\n            \"phoneNumber\": \"2524136541\",\n            \"email\": \"stwarewrc@example.com\",\n            \"spamLikelihood\": 0\n        }\n    ],\n    \"message\": \"search result fetched!\",\n    \"error\": null\n}"
+				},
+				{
+					"name": "search-by-number-no-result",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI0LCJpYXQiOjE3MTM5NTYzMjcsImV4cCI6MTcxMzk1OTkyN30.2LAnWKzM5RP-YkNvZ-27oMh-uTY1L0Y8rw4lMwQVU-0",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:3000/api/search/by-number/2524136540"
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "79"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4f-C5HKPYBoxotR8YJhIKjEbqBc9vg\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 24 Apr 2024 11:12:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"message\": \"No users found with this phone number\",\n    \"data\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "mark-spam",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI0LCJpYXQiOjE3MTM5NTYzMjcsImV4cCI6MTcxMzk1OTkyN30.2LAnWKzM5RP-YkNvZ-27oMh-uTY1L0Y8rw4lMwQVU-0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"phoneNumber\":\"6524136543\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/mark-spam"
+			},
+			"response": [
+				{
+					"name": "mark-spam",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI0LCJpYXQiOjE3MTM5NTYzMjcsImV4cCI6MTcxMzk1OTkyN30.2LAnWKzM5RP-YkNvZ-27oMh-uTY1L0Y8rw4lMwQVU-0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phoneNumber\":\"6524136543\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/mark-spam"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "61"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3d-ZjcJReQ1e08exFC68jlFnPHfRrI\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 24 Apr 2024 11:23:22 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Number 6524136543 marked as spam\"\n}"
+				},
+				{
+					"name": "mark-spam-invalid-no",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI0LCJpYXQiOjE3MTM5NTYzMjcsImV4cCI6MTcxMzk1OTkyN30.2LAnWKzM5RP-YkNvZ-27oMh-uTY1L0Y8rw4lMwQVU-0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phoneNumber\":\"652413654\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/mark-spam"
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "117"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"75-VCSm1E6Qx+7xC2VOTbMXcXdeo3U\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 24 Apr 2024 11:29:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"error\": \"Invalid phone number\",\n    \"message\": \"Please provide a valid 10-digit phone number\",\n    \"data\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "profile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI0LCJpYXQiOjE3MTM5NjAwMzAsImV4cCI6MTcxMzk2MzYzMH0.nwXSdnJVnWfLo6E0ccWZCgcyiQE8bzTAPXnibYLUwG0",
+						"type": "text"
+					}
+				],
+				"url": "http://localhost:3000/api/profile"
+			},
+			"response": [
+				{
+					"name": "self-profile",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI0LCJpYXQiOjE3MTM5NjAwMzAsImV4cCI6MTcxMzk2MzYzMH0.nwXSdnJVnWfLo6E0ccWZCgcyiQE8bzTAPXnibYLUwG0",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:3000/api/profile"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "104"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"68-rfW62KkCQsfA6uouDy0igqM3drE\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 24 Apr 2024 12:00:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"name\": \"fswefw ewr\",\n        \"phoneNumber\": \"2524136541\",\n        \"email\": \"stwarewrc@example.com\"\n    }\n}"
+				}
+			]
+		}
+	]
+}
