@@ -1,0 +1,32 @@
+# Node.js dependencies
+#node_modules
+
+# Generated files
+/dist
+/coverage
+
+# Environment variables
+.env
+
+# IDE files
+.vscode
+.idea
+
+# Logs
+logs
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Configuration files
+# config/config.mjs
+# config/config.js
+
+# Compiled JavaScript files
+*.mjs
+*.js
+
+# Ignore test database
+database_test
